@@ -44,7 +44,7 @@ class MainView extends React.Component {
           <PlaceInput
             value={a.query}
             items={a.suggestions}
-            placeholder="Location A"
+            placeholder="Your City"
             wrapperStyle={{
               zIndex: 999
             }}
@@ -54,7 +54,7 @@ class MainView extends React.Component {
           <PlaceInput
             value={b.query}
             items={b.suggestions}
-            placeholder="Location B"
+            placeholder="Your Friend's City"
             onChange={this.updateTextField('b')}
             onSelect={this.updateSelectField('b')}
           />
