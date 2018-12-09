@@ -77,7 +77,7 @@ class MainView extends React.Component {
             id="button"
             onClick={this.calculateNow}
           >
-            CALCULATE
+            SEARCH
           </div>
         </div>
       </div>

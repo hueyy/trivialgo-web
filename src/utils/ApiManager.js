@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 const api = axios.create({
-  baseURL: 'https://566302b5.eu.ngrok.io',
+  baseURL: 'https://f19e71ec.eu.ngrok.io',
 })
 
 const getPlaceSuggestions = (query) => api.get(`/suggest/${query}`)
