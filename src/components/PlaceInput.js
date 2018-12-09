@@ -2,7 +2,7 @@ import React from 'react'
 import Autocomplete from 'react-autocomplete'
 
 const defaultWrapperStyles = {
-  width: `80vw`,
+  width: `100%`,
   height: `50px`,
   zIndex: 1,
 }
@@ -10,7 +10,8 @@ const defaultWrapperStyles = {
 const defaultInputStyles = {
   width: '100%',
   padding: `10px`,
-  zIndex: 1
+  zIndex: 1,
+  boxSizing: 'border-box'
 }
 
 const defaultMenuStyles = {

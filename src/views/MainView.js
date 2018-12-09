@@ -24,8 +24,8 @@ class MainView extends React.Component {
         selected: null,
         location: ''
       },
-      from: '',
-      to: ''
+      from: '2019-01-01',
+      to: '2019-01-10'
     }
   }
   render(){
@@ -37,7 +37,10 @@ class MainView extends React.Component {
           intersections={[]}
           coordinates={null}
         />
-        <div id="controls" style={{ top: 0, position: `fixed`, padding: 20 }}>
+        <div
+          id="controls"
+          style={{ top: 0, position: `fixed`, padding: 20, boxSizing: 'border-box', width: '100%' }}
+        >
           <PlaceInput
             value={a.query}
             items={a.suggestions}
@@ -60,10 +63,12 @@ class MainView extends React.Component {
               style={{ marginRight: 10 }}
               value={from}
               onChange={this.updateDateField('from')}
+              placeholder="FROM"
             />
             <DateInput
               value={to}
               onChange={this.updateDateField('to')}
+              placeholder="TO"
             />
           </div>
         </div>
