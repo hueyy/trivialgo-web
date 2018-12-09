@@ -64,29 +64,34 @@ const SpanMap = compose(
         props.coordinates ? (
           <React.Fragment>
             <Marker
-              label='A'
               position={{
                 lat: Number.parseFloat(props.coordinates.a.lat),
                 lng: Number.parseFloat(props.coordinates.a.lng)
               }}
+              icon='https://i.imgur.com/OnyW4Pi.png'
             />
             <Marker
-              label='B'
               position={{
                 lat: Number.parseFloat(props.coordinates.b.lat),
                 lng: Number.parseFloat(props.coordinates.b.lng)
               }}
+              icon='https://i.imgur.com/1vEqG44.png'
             />
           </React.Fragment>
         ) : null
       }
       {
-        props.intersections.map(({ lat, lng, priceA, priceB, totalPrice, id, name }, i) => (
+        props.intersections.map(({ buyA, buyB, lat, lng, priceA, priceB, totalPrice, id, name }, i) => (
           <MarkerWithLabel
             key={id}
             labelAnchor={{ x: 45, y: 12.5 }}
             position={{ lat, lng }}
             icon='https://i.imgur.com/q8EvJnO.png'
+            onClick={(e) => {
+              if(e.target.href){
+                window.location.href = e.target.href
+              }
+            }}
           >
             <div
               style={{
@@ -112,8 +117,16 @@ const SpanMap = compose(
                     width: '100%'
                   }
                 }>
-                  <span style={{ backgroundColor: '#ff7675', padding: '3px', border: '1px solid black' }}>£{priceA}</span>
-                  <span style={{ backgroundColor: '#74b9ff', padding: '3px', border: '1px solid black' }}>£{priceB}</span>
+                  <span
+                    style={{ backgroundColor: '#ff7675', padding: '3px', border: '1px solid black' }}
+                  >
+                    <a href={buyA}>£{priceA}</a>
+                  </span>
+                  <span
+                    style={{ backgroundColor: '#74b9ff', padding: '3px', border: '1px solid black' }}
+                  >
+                    <a href={buyB}>£{priceB}</a>
+                  </span>
                 </div>
               </div>
           </MarkerWithLabel>
