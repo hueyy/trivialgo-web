@@ -64,18 +64,18 @@ const SpanMap = compose(
         props.coordinates ? (
           <React.Fragment>
             <Marker
-              label='A'
               position={{
                 lat: Number.parseFloat(props.coordinates.a.lat),
                 lng: Number.parseFloat(props.coordinates.a.lng)
               }}
+              icon='https://i.imgur.com/OnyW4Pi.png'
             />
             <Marker
-              label='B'
               position={{
                 lat: Number.parseFloat(props.coordinates.b.lat),
                 lng: Number.parseFloat(props.coordinates.b.lng)
               }}
+              icon='https://i.imgur.com/1vEqG44.png'
             />
           </React.Fragment>
         ) : null
